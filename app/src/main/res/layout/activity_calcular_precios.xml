@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/coste_alquiler"
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:hint="@string/horas_dias_semanas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/coste_alquiler_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/pregunta_estreno"
+            style="@style/Widget.Videoclubapp.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/calcular_aqui"
+            app:layout_constraintStart_toStartOf="@id/coste_alquiler"
+            app:layout_constraintTop_toBottomOf="@id/coste_alquiler" />
+
+        <RadioGroup
+            android:id="@+id/opciones_alquiler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/opcion_dia"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/pregunta_estreno"
+            app:layout_constraintTop_toBottomOf="@id/pregunta_estreno">
+
+            <RadioButton
+                android:id="@+id/opcion_semana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/semanas" />
+
+            <RadioButton
+                android:id="@+id/opcion_dia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dias" />
+
+            <RadioButton
+                android:id="@+id/opcion_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/horas" />
+        </RadioGroup>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/pelicula_estreno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/estreno"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/opciones_alquiler"
+            app:layout_constraintTop_toBottomOf="@id/opciones_alquiler" />
+
+        <Button
+            android:id="@+id/boton_calcular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/calcular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/pelicula_estreno"
+            app:layout_constraintTop_toBottomOf="@id/pelicula_estreno" />
+
+        <TextView
+            android:id="@+id/resultado_estreno"
+            style="@style/Widget.Videoclubapp.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/boton_calcular"
+            tools:text="Total precio de alquiler: 5.99€" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

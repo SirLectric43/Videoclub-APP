@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VideoclubAPP</string>
+    <string name="catalogo_pelis">Catálogo de películas</string>
+    <string name="calcular_precios">Calcular precios</string>
+    <string name="contactanos">Contáctanos</string>
+    <string name="watchers_videoclub">Watchers Videoclub</string>
+    <string name="calcular_aqui">Calcule aquí el precio de su alquiler de películas</string>
+    <string name="calcular">Calcular alquiler</string>
+    <string name="estreno">¿Película de estreno?</string>
+    <string name="horas_dias_semanas">Horas / Días / Semanas de alquiler...</string>
+    <string name="horas">Horas (0.15€ - 0.25€)</string>
+    <string name="dias">Días (3.99€ - 5.99€)</string>
+    <string name="semanas">Semanas (25.00€ - 40.00€)</string>
+</resources>
