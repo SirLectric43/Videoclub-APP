@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.videoclubapp"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 34
 
     buildFeatures {
         viewBinding = true
@@ -15,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.example.videoclubapp"
         minSdk = 23
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

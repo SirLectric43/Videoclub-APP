@@ -11,10 +11,8 @@ class DetallesPelicula : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_pelicula)
 
-        // Habilitar flecha de volver
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // Recuperar el objeto película enviado
         val pelicula = intent.getSerializableExtra("PELICULA_DATOS") as? Pelicula
 
         if (pelicula != null) {
@@ -23,15 +21,18 @@ class DetallesPelicula : AppCompatActivity() {
             val img: ImageView = findViewById(R.id.imgDetalle)
             val titulo: TextView = findViewById(R.id.txtTituloDetalle)
             val genero: TextView = findViewById(R.id.txtGeneroDetalle)
+            val desc: TextView = findViewById(R.id.txtDescripcionDetalle)
 
             titulo.text = pelicula.titulo
-            genero.text = "Género: ${pelicula.genero}"
+            genero.text = pelicula.genero
+            desc.text = pelicula.descripcion
+
             Glide.with(this).load(pelicula.urlImagen).into(img)
         }
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        finish() // Cierra esta pantalla y vuelve a la anterior
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
 }

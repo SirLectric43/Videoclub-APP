@@ -3,34 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/imgDetalle"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/txtTituloDetalle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/txtGeneroDetalle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray" />
+        android:textSize="16sp"
+        android:textColor="#757575"
+        android:layout_marginBottom="12dp" />
 
-    <Button
-        android:id="@+id/btnAlquilar"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Alquilar Película" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F9F9F9"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/txtDescripcionDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#333333"
+            android:text="Aquí irá la descripción..." />
+    </ScrollView>
 
 </LinearLayout>

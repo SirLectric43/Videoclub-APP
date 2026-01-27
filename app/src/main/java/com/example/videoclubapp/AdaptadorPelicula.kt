@@ -29,7 +29,11 @@ class AdaptadorPelicula(private val lista: List<Pelicula>) : RecyclerView.Adapte
         holder.txtTitulo.text = p.titulo
         holder.txtGenero.text = p.genero
 
-        Glide.with(holder.itemView.context).load(p.urlImagen).into(holder.imgPortada)
+        Glide.with(holder.itemView.context)
+            .load(p.urlImagen)
+            .placeholder(android.R.drawable.progress_horizontal) // Rueda de carga
+            .error(android.R.drawable.stat_notify_error)       // Icono de error si falla la URL
+            .into(holder.imgPortada)
 
         // --- NUEVO: Configurar el clic ---
         holder.itemView.setOnClickListener {

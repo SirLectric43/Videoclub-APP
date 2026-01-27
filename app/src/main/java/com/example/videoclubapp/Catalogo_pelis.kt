@@ -34,32 +34,32 @@ class Catalogo_pelis : AppCompatActivity() {
     private fun obtenerPeliculas(): List<Pelicula> {
         return listOf(
             // ACCIÓN
-            Pelicula("John Wick 1", "Acción", "https://image.tmdb.org/t/p/w500/fZ7Sj4S98m4YvH9h8L1O3T8T6X4.jpg"),
-            Pelicula("Karate Kid Legends", "Acción", "https://image.tmdb.org/t/p/w500/mS09M6pIq98r0uK4262h9vFvYI5.jpg"),
-            Pelicula("Malditos Bastardos", "Acción", "https://image.tmdb.org/t/p/w500/7is7l4Y93X8A8w2C6D4yv6Y2m8A.jpg"),
-            Pelicula("The Maze Runner 1", "Acción", "https://image.tmdb.org/t/p/w500/668Sdf8Y86YI4S4T1rL16S7YF6w.jpg"),
-            Pelicula("Pixels", "Acción", "https://image.tmdb.org/t/p/w500/v9D68G6R3X5Z8q6Y6X8R8W7X9vY.jpg"),
+            Pelicula("John Wick", "Acción", "https://theposterdb.com/api/assets/17551", "Un ex asesino a sueldo sale de su retiro para rastrear a los gánsteres que mataron a su perro y le robaron su coche."),
+            Pelicula("Karate Kid Legends", "Acción", "https://theposterdb.com/api/assets/595124", "Un joven aprende artes marciales para defenderse y encontrar su lugar en el mundo bajo la tutela de un maestro."),
+            Pelicula("Malditos Bastardos", "Acción", "https://theposterdb.com/api/assets/8608", "En la Francia ocupada, un grupo de soldados judíos planea asesinar a los líderes del Tercer Reich."),
+            Pelicula("The Maze Runner", "Acción", "https://theposterdb.com/api/assets/1026", "Thomas despierta en un laberinto gigante junto a otros jóvenes, sin recordar nada de su pasado."),
+            Pelicula("Pixels", "Acción", "https://theposterdb.com/api/assets/51362", "Expertos en videojuegos son reclutados por el ejército para combatir personajes clásicos que atacan la Tierra."),
 
             // COMEDIA
-            Pelicula("Minecraft The Movie", "Comedia", "https://image.tmdb.org/t/p/w500/6yYJ9mYF8r6P6l9S2v7S4eB9p6O.jpg"),
-            Pelicula("Padre no hay mas que uno", "Comedia", "https://image.tmdb.org/t/p/w500/vGv08K1tIAtFh2r0lH2y98V2vB8.jpg"),
-            Pelicula("Scary Movie 1", "Comedia", "https://image.tmdb.org/t/p/w500/961tD1H3O4N7X3u0X9u0X9u0X9u.jpg"),
-            Pelicula("Dos tontos muy tontos", "Comedia", "https://image.tmdb.org/t/p/w500/499K78S6G8jX7W9G6G6o6o7O7o7.jpg"),
-            Pelicula("8 Apellidos Vascos", "Comedia", "https://image.tmdb.org/t/p/w500/f6q3mS8S6G8jX7W9G6G6o6o7O7o.jpg"),
+            Pelicula("Minecraft La Película", "Comedia", "https://image.tmdb.org/t/p/original/8jMQ2sVZ1RRiYSpcb7Yommo7V4r.jpg", "Un grupo de aventureros se adentra en el mundo de bloques para salvarlo de fuerzas oscuras."),
+            Pelicula("Padre no hay mas que uno", "Comedia", "https://theposterdb.com/api/assets/439016", "Un padre se queda solo al cargo de sus cinco hijos cuando su mujer se va de viaje de improviso."),
+            Pelicula("Scary Movie", "Comedia", "https://theposterdb.com/api/assets/994", "Una parodia desternillante de las películas de terror más famosas de los años 90."),
+            Pelicula("Dos tontos muy tontos", "Comedia", "https://theposterdb.com/api/assets/12115", "Dos amigos con muy poco intelecto emprenden un viaje épico para devolver un maletín olvidado."),
+            Pelicula("8 Apellidos Vascos", "Comedia", "https://theposterdb.com/api/assets/673848", "Un sevillano que nunca ha salido de su ciudad se hace pasar por vasco para conquistar a una chica."),
 
             // TERROR
-            Pelicula("Psicosis", "Terror", "https://image.tmdb.org/t/p/w500/81995X7W9G6G6o6o7O7o7O7o7O.jpg"),
-            Pelicula("El Exorcista", "Terror", "https://image.tmdb.org/t/p/w500/6yP6M8U8B8U8B8U8B8U8B8U8B8U.jpg"),
-            Pelicula("Hereditary", "Terror", "https://image.tmdb.org/t/p/w500/4S9S7S8S9S7S8S9S7S8S9S7S8S9.jpg"),
-            Pelicula("Barbarian", "Terror", "https://image.tmdb.org/t/p/w500/idT5X5B8B9B9B9B9B9B9B9B9B9B.jpg"),
-            Pelicula("Talk to Me", "Terror", "https://image.tmdb.org/t/p/w500/kdP16X8S9S7S8S9S7S8S9S7S8S9.jpg"),
+            Pelicula("IT", "Terror", "https://theposterdb.com/api/assets/164502", "Es una película de terror basada en la novela de Stephen King que sigue al 'Club de los Perdedores', un grupo de niños en Derry, Maine, enfrentando sus miedos contra un ente sobrenatural."),
+            Pelicula("El Exorcista", "Terror", "https://theposterdb.com/api/assets/372164", "Una madre busca ayuda profesional y religiosa cuando su hija empieza a mostrar un comportamiento aterrador."),
+            Pelicula("Hereditary", "Terror", "https://theposterdb.com/api/assets/21170", "Tras la muerte de la matriarca, una familia empieza a descubrir secretos oscuros y perturbadores."),
+            Pelicula("Barbarian", "Terror", "https://theposterdb.com/api/assets/252533", "Una joven alquila una casa y descubre que no está sola, encontrando secretos terroríficos en el sótano."),
+            Pelicula("Talk to Me", "Terror", "https://theposterdb.com/api/assets/357707", "Un grupo de amigos descubre cómo conjurar espíritus usando una mano embalsamada, pero van demasiado lejos."),
 
             // ROMANCE
-            Pelicula("Casablanca", "Romance", "https://image.tmdb.org/t/p/w500/9xj7rB6R3X5Z8q6Y6X8R8W7X9vY.jpg"),
-            Pelicula("Titanic", "Romance", "https://image.tmdb.org/t/p/w500/9xj7rB6R3X5Z8q6Y6X8R8W7X9vY.jpg"),
-            Pelicula("La La Land", "Romance", "https://image.tmdb.org/t/p/w500/u76S8G6R3X5Z8q6Y6X8R8W7X9vY.jpg"),
-            Pelicula("Past Lives", "Romance", "https://image.tmdb.org/t/p/w500/PastLivesPath.jpg"),
-            Pelicula("Anyone But You", "Romance", "https://image.tmdb.org/t/p/w500/AnyoneButYouPath.jpg")
+            Pelicula("Casablanca", "Romance", "https://theposterdb.com/api/assets/122862", "Durante la II Guerra Mundial, un expatriado debe decidir si ayuda a su antigua amante y a su marido."),
+            Pelicula("Titanic", "Romance", "https://theposterdb.com/api/assets/48394", "Dos jóvenes de diferentes clases sociales se enamoran a bordo del lujoso e infortunado transatlántico."),
+            Pelicula("La La Land", "Romance", "https://theposterdb.com/api/assets/13422", "Una aspirante a actriz y un músico de jazz se enamoran mientras persiguen sus sueños en Los Ángeles."),
+            Pelicula("Past Lives", "Romance", "https://theposterdb.com/api/assets/356972", "Dos amigos de la infancia se reencuentran años después y reflexionan sobre su relación y el destino."),
+            Pelicula("Anyone But You", "Romance", "https://theposterdb.com/api/assets/446140", "Dos personas que se odian mutuamente deben fingir que son pareja durante una boda en Australia.")
         )
     }
 }
