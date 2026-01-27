@@ -11,6 +11,12 @@
     <color name="blue">#0288D1</color>
     <color name="blue_dark">#1134EF</color>
     <color name="blue_light">#0052CC</color>
+    <color name="gray">#D3D3D3</color>
 
     <color name="watchers_videoclub_color">#0052CC</color>
+    <color name="item_titulo">#FFFFFF</color>
+    <color name="item_genero">#D3D3D3</color>
+    <color name="titulo">#000000</color>
+    <color name="genero">#1F2124</color>
+    <color name="descripcion">#FFFFFF</color>
 </resources>

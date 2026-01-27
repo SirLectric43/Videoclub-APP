@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/imgDetalle"
@@ -19,31 +19,38 @@
         android:textSize="26sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:textColor="#000000" />
+        android:textColor="@color/titulo" />
 
     <TextView
         android:id="@+id/txtGeneroDetalle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:textColor="#757575"
-        android:layout_marginBottom="12dp" />
+        android:textColor="@color/genero"
+        android:layout_marginBottom="16dp" />
 
-    <ScrollView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#F9F9F9"
-        android:padding="8dp">
+        app:cardCornerRadius="15dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/watchers_videoclub_color">
 
-        <TextView
-            android:id="@+id/txtDescripcionDetalle"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:lineSpacingExtra="4dp"
-            android:textColor="#333333"
-            android:text="Aquí irá la descripción..." />
-    </ScrollView>
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txtDescripcionDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/descripcion"
+                android:text="Cargando descripción..." />
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

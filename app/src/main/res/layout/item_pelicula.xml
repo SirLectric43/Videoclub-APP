@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/watchers_videoclub_color">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Título de la Película"
-                android:textColor="#212121"
+                android:textColor="@color/item_titulo"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -44,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Género"
-                android:textColor="#757575"
+                android:textColor="@color/item_genero"
                 android:textSize="14sp" />
 
         </LinearLayout>
