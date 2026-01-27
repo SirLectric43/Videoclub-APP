@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,18 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VideoclubAPP">
         <activity
-            android:name=".contacto"
+            android:name=".Contacto"
             android:exported="false" />
         <activity
-            android:name=".calcular_precios"
+            android:name=".Calcular_precios"
             android:exported="false"
             android:parentActivityName=".MainActivity"> <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".catalogo_pelis"
+            android:name=".Catalogo_pelis"
             android:exported="false" />
+        <activity
+            android:name=".DetallesPelicula"
+            android:exported="false"
+            android:label="Detalles de la Película" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.videoclubapp.databinding.ActivityCalcularPreciosBinding
 import java.text.NumberFormat
 
-class calcular_precios : AppCompatActivity() {
+class Calcular_precios : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalcularPreciosBinding
 

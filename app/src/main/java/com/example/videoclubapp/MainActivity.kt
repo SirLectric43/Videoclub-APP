@@ -15,17 +15,17 @@ class MainActivity : AppCompatActivity() {
         val btnContacto = findViewById<Button>(R.id.contactanos)
 
         btnCatalogo_Pelis.setOnClickListener {
-            val intent = Intent(this, catalogo_pelis::class.java)
+            val intent = Intent(this, Catalogo_pelis::class.java)
             startActivity(intent)
         }
 
         btnCalcular_Precios.setOnClickListener {
-            val intent = Intent(this, calcular_precios::class.java)
+            val intent = Intent(this, Calcular_precios::class.java)
             startActivity(intent)
         }
 
         btnContacto.setOnClickListener {
-            val intent = Intent(this, contacto::class.java)
+            val intent = Intent(this, Contacto::class.java)
             startActivity(intent)
         }
     }
