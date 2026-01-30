@@ -1,83 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
-
-    <Button
-        android:id="@+id/catalogo_pelis"
-        android:layout_width="147dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginBottom="472dp"
-        android:text="@string/catalogo_pelis"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/calcular_precios"
-        android:layout_width="147dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="472dp"
-        android:text="@string/calcular_precios"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/contactanos"
-        android:layout_width="329dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="370dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="31dp"
-        android:text="@string/contactanos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catalogo_pelis" />
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/watchers_videoclub"
-        android:layout_width="315dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/watchers_videoclub"
-        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="40sp"
+        android:textStyle="bold"
         android:textColor="@color/watchers_videoclub_color"
-        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintVertical_bias="0.4" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="232dp"
-        android:layout_height="223dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="82dp"
-        android:layout_marginEnd="82dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Domingo Miguel Elena Fuentes\nProyecto Final Módulo PMDM\nCurso: 2025-2026\nIES Laguna de Tollón"
+        android:textColor="@color/watchers_videoclub_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639"
-        app:srcCompat="@drawable/logo_videoclub" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

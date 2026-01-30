@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/catalogo_pelis"
+        android:layout_width="147dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="472dp"
+        android:text="@string/catalogo_pelis"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/calcular_precios"
+        android:layout_width="147dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="472dp"
+        android:textColor="@color/white"
+        android:text="@string/calcular_precios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/contactanos"
+        android:layout_width="329dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="31dp"
+        android:textColor="@color/white"
+        android:text="@string/contactanos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catalogo_pelis" />
+
+    <TextView
+        android:id="@+id/watchers_videoclub"
+        android:layout_width="315dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="44dp"
+        android:text="@string/watchers_videoclub"
+        android:textAlignment="center"
+        android:textColor="@color/watchers_videoclub_color"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="232dp"
+        android:layout_height="223dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="82dp"
+        android:layout_marginEnd="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639"
+        app:srcCompat="@drawable/logo_videoclub" />
+</androidx.constraintlayout.widget.ConstraintLayout>
