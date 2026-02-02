@@ -12,13 +12,25 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <ImageView
+            android:id="@+id/icon_tiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tiempo"
+            app:tint="@color/watchers_videoclub_color"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/coste_alquiler"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/coste_alquiler" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/coste_alquiler"
-            android:layout_width="295dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:hint="@string/horas_dias_semanas"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_tiempo"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -36,7 +48,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/calcular_aqui"
-            app:layout_constraintStart_toStartOf="@id/coste_alquiler"
+            android:drawablePadding="8dp"
+            app:drawableStartCompat="@drawable/payments"
+            app:drawableTint="@color/watchers_videoclub_color"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/coste_alquiler" />
 
         <RadioGroup
@@ -73,6 +88,9 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/estreno"
+            android:drawablePadding="8dp"
+            app:drawableStartCompat="@drawable/film"
+            app:drawableTint="@color/watchers_videoclub_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/opciones_alquiler"
             app:layout_constraintTop_toBottomOf="@id/opciones_alquiler" />
@@ -84,7 +102,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/calcular"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/pelicula_estreno"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pelicula_estreno" />
 
         <TextView

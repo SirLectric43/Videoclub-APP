@@ -1,29 +1,61 @@
 package com.example.videoclubapp
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class Catalogo_pelis : AppCompatActivity() {
 
+    private lateinit var adaptador: AdaptadorPelicula
+    private lateinit var listaCompleta: List<Pelicula>
+    private var filtroActual: String = "Todos"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalogo_pelis)
 
-        // Configuración de la barra superior
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Catálogo de Películas"
 
-        // 1. Buscamos el RecyclerView en el layout
         val rvPeliculas: RecyclerView = findViewById(R.id.rvPeliculas)
-
-        // 2. Configuramos el diseño (Grid de 2 columnas para que parezca un videoclub)
         rvPeliculas.layoutManager = GridLayoutManager(this, 2)
 
-        // 3. Obtenemos los datos y los pasamos al adaptador
-        val listaDePelis = obtenerPeliculas()
-        rvPeliculas.adapter = AdaptadorPelicula(listaDePelis)
+        // 1. Cargamos la lista completa una sola vez
+        listaCompleta = obtenerPeliculas()
+
+        // 2. Inicializamos el adaptador pasándole la función lambda para clicks en favoritos
+        adaptador = AdaptadorPelicula(listaCompleta) { pelicula ->
+            // Si estamos viendo la lista de "Favoritos" y desmarcamos uno,
+            // refrescamos la lista para que desaparezca al momento.
+            if (filtroActual == "Favoritos" && !pelicula.esFavorita) {
+                filtrarPor("Favoritos")
+            }
+        }
+        rvPeliculas.adapter = adaptador
+
+        // 3. Configurar listeners de los botones
+        setupFiltros()
+    }
+
+    private fun setupFiltros() {
+        findViewById<Button>(R.id.btnTodos).setOnClickListener { filtrarPor("Todos") }
+        findViewById<Button>(R.id.btnFavoritos).setOnClickListener { filtrarPor("Favoritos") }
+        findViewById<Button>(R.id.btnAccion).setOnClickListener { filtrarPor("Acción") }
+        findViewById<Button>(R.id.btnComedia).setOnClickListener { filtrarPor("Comedia") }
+        findViewById<Button>(R.id.btnTerror).setOnClickListener { filtrarPor("Terror") }
+        findViewById<Button>(R.id.btnRomance).setOnClickListener { filtrarPor("Romance") }
+    }
+
+    private fun filtrarPor(categoria: String) {
+        filtroActual = categoria
+        val listaFiltrada = when (categoria) {
+            "Todos" -> listaCompleta
+            "Favoritos" -> listaCompleta.filter { it.esFavorita }
+            else -> listaCompleta.filter { it.genero == categoria }
+        }
+        adaptador.actualizarLista(listaFiltrada)
     }
 
     override fun onSupportNavigateUp(): Boolean {

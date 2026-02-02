@@ -4,25 +4,29 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class AdaptadorPelicula(private val lista: List<Pelicula>) : RecyclerView.Adapter<AdaptadorPelicula.ViewHolder>() {
+// [Modificado] Ahora la lista es var para poder cambiarla y añadimos un listener
+class AdaptadorPelicula(
+    private var lista: List<Pelicula>,
+    private val onFavoritoClick: (Pelicula) -> Unit // Callback para avisar al activity
+) : RecyclerView.Adapter<AdaptadorPelicula.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgPortada: ImageView = view.findViewById(R.id.imgPortada)
         val txtTitulo: TextView = view.findViewById(R.id.txtTitulo)
         val txtGenero: TextView = view.findViewById(R.id.txtGenero)
+        val btnFavorito: ImageButton = view.findViewById(R.id.btnFavorito) // [Nuevo]
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_pelicula, parent, false)
         return ViewHolder(view)
     }
-
-    // Dentro de PeliculaAdapter.kt, modifica el onBindViewHolder:
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val p = lista[position]
@@ -31,21 +35,33 @@ class AdaptadorPelicula(private val lista: List<Pelicula>) : RecyclerView.Adapte
 
         Glide.with(holder.itemView.context)
             .load(p.urlImagen)
-            .placeholder(android.R.drawable.progress_horizontal) // Rueda de carga
-            .error(android.R.drawable.stat_notify_error)       // Icono de error si falla la URL
+            .placeholder(android.R.drawable.progress_horizontal)
+            .error(android.R.drawable.stat_notify_error)
             .into(holder.imgPortada)
 
-        // --- NUEVO: Configurar el clic ---
+        // [Nuevo] Configurar icono de favorito
+        val icono = if (p.esFavorita) android.R.drawable.btn_star_big_on else android.R.drawable.btn_star_big_off
+        holder.btnFavorito.setImageResource(icono)
+
+        holder.btnFavorito.setOnClickListener {
+            p.esFavorita = !p.esFavorita
+            notifyItemChanged(position) // Actualiza solo este item visualmente
+            onFavoritoClick(p) // Avisa a la actividad (por si hay que refrescar filtros)
+        }
+
         holder.itemView.setOnClickListener {
             val contexto = holder.itemView.context
             val intent = Intent(contexto, DetallesPelicula::class.java)
-
-            // Pasamos el objeto película entero a la siguiente pantalla
             intent.putExtra("PELICULA_DATOS", p)
-
             contexto.startActivity(intent)
         }
     }
 
     override fun getItemCount() = lista.size
+
+    // [Nuevo] Método para filtrar la lista
+    fun actualizarLista(nuevaLista: List<Pelicula>) {
+        lista = nuevaLista
+        notifyDataSetChanged()
+    }
 }
