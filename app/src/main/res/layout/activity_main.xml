@@ -5,18 +5,34 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="232dp"
+        android:layout_height="223dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="82dp"
+        android:layout_marginEnd="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592"
+        app:srcCompat="@drawable/logo_videoclub" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/watchers_videoclub"
+        android:textColor="@color/watchers_videoclub_color"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="@color/watchers_videoclub_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.195" />
 
     <TextView
         android:layout_width="wrap_content"

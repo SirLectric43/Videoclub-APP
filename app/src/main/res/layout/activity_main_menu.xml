@@ -53,20 +53,18 @@
         app:layout_constraintTop_toBottomOf="@+id/catalogo_pelis" />
 
     <TextView
-        android:id="@+id/watchers_videoclub"
-        android:layout_width="315dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/watchers_videoclub"
-        android:textAlignment="center"
         android:textColor="@color/watchers_videoclub_color"
-        android:textSize="34sp"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <ImageView
         android:id="@+id/logo"
