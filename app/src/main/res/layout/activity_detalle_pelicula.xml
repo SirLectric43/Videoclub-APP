@@ -49,7 +49,7 @@
                 android:textSize="17sp"
                 android:lineSpacingExtra="5dp"
                 android:textColor="@color/descripcion"
-                android:text="Cargando descripción..." />
+                android:text="@string/cargando_descripcion" />
         </ScrollView>
     </androidx.cardview.widget.CardView>
 

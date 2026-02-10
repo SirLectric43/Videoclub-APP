@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:scaleType="centerCrop"
-            android:contentDescription="Poster de la película"
+            android:contentDescription="@string/poster_pelicula"
             app:srcCompat="@android:drawable/ic_menu_report_image" />
 
         <LinearLayout
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Título de la Película"
+                android:text="@string/titulo_pelicula"
                 android:textColor="@color/item_titulo"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Género"
+                android:text="@string/genero"
                 android:textColor="@color/item_genero"
                 android:textSize="14sp" />
 
@@ -55,7 +55,7 @@
                 android:layout_gravity="end"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@android:drawable/btn_star_big_off"
-                android:contentDescription="Añadir a favoritos" />
+                android:contentDescription="@string/anadir_a_favoritos" />
 
         </LinearLayout>
     </LinearLayout>

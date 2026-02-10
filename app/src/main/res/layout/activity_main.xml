@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Domingo Miguel Elena Fuentes\nProyecto Final Módulo PMDM\nCurso: 2025-2026\nIES Laguna de Tollón"
+        android:text="@string/inicio_proyecto"
         android:textColor="@color/watchers_videoclub_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

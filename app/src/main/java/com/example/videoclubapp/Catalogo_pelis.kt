@@ -2,6 +2,7 @@ package com.example.videoclubapp
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,12 +41,12 @@ class Catalogo_pelis : AppCompatActivity() {
     }
 
     private fun setupFiltros() {
-        findViewById<Button>(R.id.btnTodos).setOnClickListener { filtrarPor("Todos") }
-        findViewById<Button>(R.id.btnFavoritos).setOnClickListener { filtrarPor("Favoritos") }
-        findViewById<Button>(R.id.btnAccion).setOnClickListener { filtrarPor("Acción") }
-        findViewById<Button>(R.id.btnComedia).setOnClickListener { filtrarPor("Comedia") }
-        findViewById<Button>(R.id.btnTerror).setOnClickListener { filtrarPor("Terror") }
-        findViewById<Button>(R.id.btnRomance).setOnClickListener { filtrarPor("Romance") }
+        findViewById<ImageButton>(R.id.btnTodos).setOnClickListener { filtrarPor("Todos") }
+        findViewById<ImageButton>(R.id.btnFavoritos).setOnClickListener { filtrarPor("Favoritos") }
+        findViewById<ImageButton>(R.id.btnAccion).setOnClickListener { filtrarPor("Acción") }
+        findViewById<ImageButton>(R.id.btnComedia).setOnClickListener { filtrarPor("Comedia") }
+        findViewById<ImageButton>(R.id.btnTerror).setOnClickListener { filtrarPor("Terror") }
+        findViewById<ImageButton>(R.id.btnRomance).setOnClickListener { filtrarPor("Romance") }
     }
 
     private fun filtrarPor(categoria: String) {

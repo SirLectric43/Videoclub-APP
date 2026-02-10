@@ -11,4 +11,24 @@
     <string name="horas">Horas (0.15€ - 0.25€)</string>
     <string name="dias">Días (3.99€ - 5.99€)</string>
     <string name="semanas">Semanas (25.00€ - 40.00€)</string>
+    <string name="todos">Todos</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="accion">Acción</string>
+    <string name="comedia">Comedia</string>
+    <string name="terror">Terror</string>
+    <string name="romance">Romance</string>
+    <string name="cargando_descripcion">Cargando descripción...</string>
+    <string name="inicio_proyecto">Domingo Miguel Elena Fuentes\nProyecto Final Módulo PMDM\nCurso: 2025-2026\nIES Laguna de Tollón</string>
+    <string name="poster_pelicula">Poster de la película</string>
+    <string name="titulo_pelicula">Título de la Película</string>
+    <string name="genero">Género</string>
+    <string name="anadir_a_favoritos">Añadir a favoritos</string>
+    <string name="contactar_ahora">Contactar ahora</string>
+    <string name="direccion_calle">Av. Blas Infante, s/n, 41749 El Cuervo, Sevilla</string>
+    <string name="direccion">Dirección</string>
+    <string name="num_telefono">+34 603 618 120</string>
+    <string name="telefono">Teléfono</string>
+    <string name="correo_electronico">delefue915@g.educaand.es</string>
+    <string name="email">Email</string>
+    <string name="info_contacto">Información de Contacto</string>
 </resources>
