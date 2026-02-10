@@ -16,20 +16,25 @@ class AdaptadorPelicula(
     private val onFavoritoClick: (Pelicula) -> Unit // Callback para avisar al activity
 ) : RecyclerView.Adapter<AdaptadorPelicula.ViewHolder>() {
 
+    // Clase interna que mantiene las referencias a las vistas de cada tarjeta
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgPortada: ImageView = view.findViewById(R.id.imgPortada)
         val txtTitulo: TextView = view.findViewById(R.id.txtTitulo)
         val txtGenero: TextView = view.findViewById(R.id.txtGenero)
-        val btnFavorito: ImageButton = view.findViewById(R.id.btnFavorito) // [Nuevo]
+        val btnFavorito: ImageButton = view.findViewById(R.id.btnFavorito)
     }
 
+    // Infla el diseño item_pelicula.xml para cada elemento de la lista
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_pelicula, parent, false)
         return ViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val p = lista[position]
+
+        // Asigna los textos a los 2 TextViews
         holder.txtTitulo.text = p.titulo
         holder.txtGenero.text = p.genero
 
@@ -39,7 +44,7 @@ class AdaptadorPelicula(
             .error(android.R.drawable.stat_notify_error)
             .into(holder.imgPortada)
 
-        // [Nuevo] Configurar icono de favorito
+        // Configurar icono de favorito
         val icono = if (p.esFavorita) android.R.drawable.btn_star_big_on else android.R.drawable.btn_star_big_off
         holder.btnFavorito.setImageResource(icono)
 
@@ -59,7 +64,7 @@ class AdaptadorPelicula(
 
     override fun getItemCount() = lista.size
 
-    // [Nuevo] Método para filtrar la lista
+    // Metodo para filtrar la lista
     fun actualizarLista(nuevaLista: List<Pelicula>) {
         lista = nuevaLista
         notifyDataSetChanged()

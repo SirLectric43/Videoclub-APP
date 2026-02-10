@@ -17,16 +17,17 @@ class Catalogo_pelis : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalogo_pelis)
 
+        // Configuración de la barra superior con botón de retroceso
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Catálogo de Películas"
 
         val rvPeliculas: RecyclerView = findViewById(R.id.rvPeliculas)
         rvPeliculas.layoutManager = GridLayoutManager(this, 2)
 
-        // 1. Cargamos la lista completa una sola vez
+        // Cargamos la lista completa una sola vez
         listaCompleta = obtenerPeliculas()
 
-        // 2. Inicializamos el adaptador pasándole la función lambda para clicks en favoritos
+        // Inicializamos el adaptador pasándole la función lambda para clicks en favoritos
         adaptador = AdaptadorPelicula(listaCompleta) { pelicula ->
             // Si estamos viendo la lista de "Favoritos" y desmarcamos uno,
             // refrescamos la lista para que desaparezca al momento.
@@ -36,10 +37,11 @@ class Catalogo_pelis : AppCompatActivity() {
         }
         rvPeliculas.adapter = adaptador
 
-        // 3. Configurar listeners de los botones
+        // Configurar listeners de los botones
         setupFiltros()
     }
 
+    // Botones con iconos para los filtros
     private fun setupFiltros() {
         findViewById<ImageButton>(R.id.btnTodos).setOnClickListener { filtrarPor("Todos") }
         findViewById<ImageButton>(R.id.btnFavoritos).setOnClickListener { filtrarPor("Favoritos") }
@@ -49,6 +51,7 @@ class Catalogo_pelis : AppCompatActivity() {
         findViewById<ImageButton>(R.id.btnRomance).setOnClickListener { filtrarPor("Romance") }
     }
 
+    // Función que filtra la lista de películas según la categoría seleccionada
     private fun filtrarPor(categoria: String) {
         filtroActual = categoria
         val listaFiltrada = when (categoria) {
@@ -64,6 +67,7 @@ class Catalogo_pelis : AppCompatActivity() {
         return true
     }
 
+    // "Base de datos" de la aplicación
     private fun obtenerPeliculas(): List<Pelicula> {
         return listOf(
             // ACCIÓN

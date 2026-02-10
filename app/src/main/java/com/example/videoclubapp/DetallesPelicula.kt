@@ -13,23 +13,19 @@ class DetallesPelicula : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // Recupera el objeto Pelicula enviado desde el adaptador
         val pelicula = intent.getSerializableExtra("PELICULA_DATOS") as? Pelicula
 
         if (pelicula != null) {
             supportActionBar?.title = pelicula.titulo
 
+            // Asigna los datos a las vistas del layout
+            findViewById<TextView>(R.id.txtTituloDetalle).text = pelicula.titulo
+            findViewById<TextView>(R.id.txtGeneroDetalle).text = pelicula.genero
+            findViewById<TextView>(R.id.txtDuracionDetalle).text = "${pelicula.duracion} minutos"
+            findViewById<TextView>(R.id.txtDescripcionDetalle).text = pelicula.descripcion
+
             val img: ImageView = findViewById(R.id.imgDetalle)
-            val titulo: TextView = findViewById(R.id.txtTituloDetalle)
-            val genero: TextView = findViewById(R.id.txtGeneroDetalle)
-            val desc: TextView = findViewById(R.id.txtDescripcionDetalle)
-            val duracion: TextView = findViewById(R.id.txtDuracionDetalle)
-
-
-            titulo.text = pelicula.titulo
-            genero.text = pelicula.genero
-            desc.text = pelicula.descripcion
-            duracion.text = "${pelicula.duracion} minutos"
-
             Glide.with(this).load(pelicula.urlImagen).into(img)
         }
     }

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Contacto : AppCompatActivity() {
 
+    // Datos estáticos de contacto
     private val email = "delefue915@g.educaand.es"
     private val telefono = "+34603618120"
     private val direccion = "IES Laguna de Tollón, Av. Blas Infante, s/n, 41749 El Cuervo, Sevilla"
@@ -26,6 +27,7 @@ class Contacto : AppCompatActivity() {
         }
     }
 
+    // Muestra un diálogo para que el usuario elija la acción
     private fun mostrarOpcionesContacto() {
         val opciones = arrayOf("Enviar Email", "Llamar por teléfono", "Ver en el mapa")
 
@@ -41,6 +43,7 @@ class Contacto : AppCompatActivity() {
         builder.show()
     }
 
+    // Intent Implícito para enviar un correo electrónico
     private fun enviarEmail() {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:$email")
@@ -49,6 +52,7 @@ class Contacto : AppCompatActivity() {
         startActivity(Intent.createChooser(intent, "Enviar correo con..."))
     }
 
+    // Intent Implícito para abrir el marcador telefónico
     private fun llamarTelefono() {
         // ACTION_DIAL abre el teclado con el número, es más seguro que llamar directamente
         val intent = Intent(Intent.ACTION_DIAL).apply {
@@ -57,6 +61,7 @@ class Contacto : AppCompatActivity() {
         startActivity(intent)
     }
 
+    // Intent Implícito para buscar una dirección en Google Maps
     private fun abrirMapa() {
         // Busca la dirección directamente en la app de mapas
         val uriMapa = Uri.parse("geo:0,0?q=${Uri.encode(direccion)}")

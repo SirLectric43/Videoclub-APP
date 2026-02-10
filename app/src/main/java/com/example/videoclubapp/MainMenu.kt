@@ -10,23 +10,24 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        val btnCatalogo_Pelis = findViewById<Button>(R.id.catalogo_pelis)
-        val btnCalcular_Precios = findViewById<Button>(R.id.calcular_precios)
+        // Referencia a los botones del menú
+        val btnCatalogo = findViewById<Button>(R.id.catalogo_pelis)
+        val btnPrecios = findViewById<Button>(R.id.calcular_precios)
         val btnContacto = findViewById<Button>(R.id.contactanos)
 
-        btnCatalogo_Pelis.setOnClickListener {
-            val intent = Intent(this, Catalogo_pelis::class.java)
-            startActivity(intent)
+        // Navegación al Catálogo de Películas
+        btnCatalogo.setOnClickListener {
+            startActivity(Intent(this, Catalogo_pelis::class.java))
         }
 
-        btnCalcular_Precios.setOnClickListener {
-            val intent = Intent(this, Calcular_precios::class.java)
-            startActivity(intent)
+        // Navegación a la calculadora de alquiler
+        btnPrecios.setOnClickListener {
+            startActivity(Intent(this, Calcular_precios::class.java))
         }
 
+        // Navegación a la información de contacto
         btnContacto.setOnClickListener {
-            val intent = Intent(this, Contacto::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Contacto::class.java))
         }
     }
 }
