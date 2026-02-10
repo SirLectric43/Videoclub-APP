@@ -7,5 +7,6 @@ data class Pelicula(
     val genero: String,
     val urlImagen: String,
     val descripcion: String,
+    val duracion: String,
     var esFavorita: Boolean = false
 ) : Serializable

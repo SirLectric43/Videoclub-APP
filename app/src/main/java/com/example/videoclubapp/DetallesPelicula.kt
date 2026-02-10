@@ -22,10 +22,13 @@ class DetallesPelicula : AppCompatActivity() {
             val titulo: TextView = findViewById(R.id.txtTituloDetalle)
             val genero: TextView = findViewById(R.id.txtGeneroDetalle)
             val desc: TextView = findViewById(R.id.txtDescripcionDetalle)
+            val duracion: TextView = findViewById(R.id.txtDuracionDetalle)
+
 
             titulo.text = pelicula.titulo
             genero.text = pelicula.genero
             desc.text = pelicula.descripcion
+            duracion.text = "${pelicula.duracion} minutos"
 
             Glide.with(this).load(pelicula.urlImagen).into(img)
         }
