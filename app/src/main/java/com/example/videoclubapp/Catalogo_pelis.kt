@@ -1,10 +1,12 @@
 package com.example.videoclubapp
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class Catalogo_pelis : AppCompatActivity() {
@@ -12,36 +14,39 @@ class Catalogo_pelis : AppCompatActivity() {
     private lateinit var adaptador: AdaptadorPelicula
     private lateinit var listaCompleta: List<Pelicula>
     private var filtroActual: String = "Todos"
+    private val PREFS_NAME = "FavoritosPrefs" // Nombre del archivo de preferencias
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalogo_pelis)
 
-        // Configuración de la barra superior con botón de retroceso
+        // Configuración de la barra superior
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Catálogo de Películas"
 
         val rvPeliculas: RecyclerView = findViewById(R.id.rvPeliculas)
+        // Diseño de cuadrícula fijo (2 columnas)
         rvPeliculas.layoutManager = GridLayoutManager(this, 2)
 
-        // Cargamos la lista completa una sola vez
-        listaCompleta = obtenerPeliculas()
+        // Cargamos la lista aplicando los favoritos guardados en el dispositivo
+        listaCompleta = obtenerPeliculasConFavoritos()
 
-        // Inicializamos el adaptador pasándole la función lambda para clicks en favoritos
+        // Inicializamos el adaptador con la lógica de favoritos
         adaptador = AdaptadorPelicula(listaCompleta) { pelicula ->
-            // Si estamos viendo la lista de "Favoritos" y desmarcamos uno,
-            // refrescamos la lista para que desaparezca al momento.
+            // Al hacer click, guardamos el estado permanentemente
+            guardarEstadoFavorito(pelicula.titulo, pelicula.esFavorita)
+
+            // Si filtramos por favoritos y se desmarca uno, actualizamos la vista
             if (filtroActual == "Favoritos" && !pelicula.esFavorita) {
                 filtrarPor("Favoritos")
             }
         }
         rvPeliculas.adapter = adaptador
 
-        // Configurar listeners de los botones
+        // Listeners para los botones de categorías (iconos)
         setupFiltros()
     }
 
-    // Botones con iconos para los filtros
     private fun setupFiltros() {
         findViewById<ImageButton>(R.id.btnTodos).setOnClickListener { filtrarPor("Todos") }
         findViewById<ImageButton>(R.id.btnFavoritos).setOnClickListener { filtrarPor("Favoritos") }
@@ -51,7 +56,6 @@ class Catalogo_pelis : AppCompatActivity() {
         findViewById<ImageButton>(R.id.btnRomance).setOnClickListener { filtrarPor("Romance") }
     }
 
-    // Función que filtra la lista de películas según la categoría seleccionada
     private fun filtrarPor(categoria: String) {
         filtroActual = categoria
         val listaFiltrada = when (categoria) {
@@ -62,12 +66,29 @@ class Catalogo_pelis : AppCompatActivity() {
         adaptador.actualizarLista(listaFiltrada)
     }
 
+    // Persistencia: Guarda el estado de la estrella en SharedPreferences
+    private fun guardarEstadoFavorito(titulo: String, esFavorito: Boolean) {
+        val prefs: SharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        prefs.edit().putBoolean(titulo, esFavorito).apply()
+    }
+
+    // Carga los favoritos guardados al iniciar la actividad
+    private fun obtenerPeliculasConFavoritos(): List<Pelicula> {
+        val listaDeBase = obtenerPeliculas() // Obtiene la lista hardcodeada
+        val prefs: SharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+        for (pelicula in listaDeBase) {
+            pelicula.esFavorita = prefs.getBoolean(pelicula.titulo, false)
+        }
+        return listaDeBase
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true
     }
 
-    // "Base de datos" de la aplicación
+    // Tu lista de películas proporcionada
     private fun obtenerPeliculas(): List<Pelicula> {
         return listOf(
             // ACCIÓN
